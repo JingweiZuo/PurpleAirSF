@@ -2,7 +2,7 @@
 
 This is the companion repository for the PurpleAirSF Dataset. Paper will be released soon.
 
-The preprocessed datasets can be downloaded [here](https://tiiuae-my.sharepoint.com/:f:/g/personal/michele_baldo_tii_ae/EjAMg7MVY69KvTWdn7oUvlEBtRo0UWmTgVI1fVpB1lCV7g?e=nSmjQe) 
+The preprocessed datasets can be downloaded in [Google Drive](https://drive.google.com/drive/folders/1K-o1KhbM0fGARt40v2zrOO1jcqqATh-d?usp=sharing).
 
 ### Datasets with three temporal granularities are provided:
 - PurpleAirSF-10M:  10-minute sampling frequency/granularity 
