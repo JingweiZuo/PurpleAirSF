@@ -76,13 +76,13 @@ with the following structure:
 API_readKey = YOUR-PRIVATE-READ-KEY
 ```
 
-3. Use the provided scripts for data acquisition and pre-processings
-    - *'main_purpleair_to_csv.py'*: fetch raw data and save to '.csv' files
-    - *'csv_data_load.py'*: pre-process the '.csv' files and save to dataframe with target format, i.e., with shape of (N, L, F)
+### Step 2: Use the provided scripts for data acquisition and pre-processings
+- *'main_purpleair_to_csv.py'*: fetch raw data and save to '.csv' files
+- *'csv_data_load.py'*: pre-process the '.csv' files and save to dataframe with target format, i.e., with shape of (N, L, F)
 
 
 
-### Citation
+## Citation
 
 If you find this data useful in your research, please consider citing the following paper:
 
