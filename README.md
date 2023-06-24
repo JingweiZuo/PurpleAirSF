@@ -1,10 +1,16 @@
 ## Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset
 
-This is the companion repository for the PurpleAirSF Dataset. 
+This is the companion repository for the PurpleAirSF Dataset. Paper will be released soon.
 
-The preprocessed datasets can be downloaded [here](https://tiiuae-my.sharepoint.com/:u:/g/personal/michele_baldo_tii_ae/EdaRXDgCVNtJuBh6hqSJ3rsBTfm-sD3xf_NHXvXxsWKwfA?e=6SgFbh) 
+The preprocessed datasets can be downloaded [here](https://tiiuae-my.sharepoint.com/:f:/g/personal/michele_baldo_tii_ae/EjAMg7MVY69KvTWdn7oUvlEBtRo0UWmTgVI1fVpB1lCV7g?e=nSmjQe) 
 
 ### Datasets with three temporal granularities are provided:
+- PurpleAirSF-10M:  10-minute sampling frequency/granularity 
+- PurpleAirSF-1H:   one-hour sampling frequency/granularity 
+- PurpleAirSF-6H:   six-hour sampling frequency/granularity 
+
+
+
 <p float="left">
   <img src="figures/10M_316.png" width="30%" />
   <img src="figures/1H_232.jpg" width="30%" /> 
@@ -20,10 +26,20 @@ The statistical summary of the datasets are shown in the below table:
 
 ## How to use PurpleAirSF?
 
+In each archived file, we provide 
+```
+- IDS.json:         JSON file including the IDs of the sensor stations 
+- sensor-loc.csv:   GPS locations (longitude, latitude) of each sensor station 
+- map.html:         Sensor stations visualized in a Map
+- data.npy:         Preprocessed meteorological and air quality measures 
+```
+
 The preprocessed data has a shape of (N, L, F)
-- N is the number of sensor stations
-- L is the entire sequence length
-- F is the number of features/measures in each station. 
+```
+- N: the number of sensor stations
+- L: the entire sequence length
+- F: the number of features/measures in each station. 
+```
 
 Users are free to split the dataset with different window size. 
 
@@ -43,13 +59,16 @@ The detailed descriptions of the measures are shown in the below table:
 
 
 
+## How to obtain the raw data from PurpleAir?
 
-## Getting data with the APIs
+Users can also use our provided scripts to fetch raw data from PurpleAir via PurpleAir API.
 
-Users can also use our provided scripts to fetch raw data via PurpleAir API.
+### Step 1: Private key application
 For some feature you need the private keys for the APIs.
 
-PurpleAir: write a email to contact@purpleair.com with subject "API keys for PurpleAirAPI". 
+1. Create an PurpleAir account
+
+2. Write a email to contact@purpleair.com with subject "API keys for PurpleAirAPI". 
 They will send you your API private key. Once you have it, just create a file in `keys/PurpleAir_API_key.conf`
 with the following structure:
 ```
@@ -57,9 +76,20 @@ with the following structure:
 API_readKey = YOUR-PRIVATE-READ-KEY
 ```
 
-For Airly go on the website and ask for your private key. 
-Then create the file `keys/Airly_API_key.conf` as follows:
-```
-[airly.org]
-API_key = YOUR-PRIVATE-KEY
+3. Use the provided scripts for data acquisition and pre-processings
+    - *'main_purpleair_to_csv.py'*: fetch raw data and save to '.csv' files
+    - *'csv_data_load.py'*: pre-process the '.csv' files and save to dataframe with target format, i.e., with shape of (N, L, F)
+
+
+
+### Citation
+
+If you find this data useful in your research, please consider citing the following paper:
+
+```script
+@misc{zuo2023unleashing,
+  title     = {Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset },
+  author    = {Zuo, Jingwei and Li, Wenbin and Baldo, Michele and Hacid, Hakim},
+  year      = {2023}
+}
 ```

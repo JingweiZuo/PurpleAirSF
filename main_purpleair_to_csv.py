@@ -12,7 +12,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from main_api import PurpleAir, ApiCall
+from main_api import PurpleAir
 from sensors import Sensor, sensors_groups
 
 from main_purpleair_spider import fetch_data
@@ -75,13 +75,11 @@ def read_csv(sensor_path: bytes | str | os.PathLike) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    data_path = Path('/Users/jingweizuo/VisualStudioCode/cop28/data/new_10m_data')
+    data_path = Path('./PurpleAirSF/')
 
     pd.set_option('display.max_columns', None, 'display.expand_frame_repr', False)
     start_time = time.perf_counter()
     start_time_process = time.process_time()
-
-    print_json = ApiCall.formatted_print
 
     config = configparser.ConfigParser()
     config.read('keys/Airly_API_key.conf')
@@ -93,9 +91,6 @@ if __name__ == "__main__":
     # check data folder exists:
     assert os.path.exists(data_path)
 
-    # london_sensors = purple_air_api.sensors(nwlat=51.6000, nwlng=-0.1800, selat=51.4600, selng=-0.0300)
-    # print_json(london_sensors)
-
     print(f"sensors_groups.keys():", sensors_groups.keys())
     sensor_group_names = [
         #'santa_monica',
@@ -104,7 +99,6 @@ if __name__ == "__main__":
     ]
     print(f"sensor_group_names:", sensor_group_names)
     average_in_minutes_list = [24 * 60, 6 * 60, 60,] # 10,]  # frequency in minutes
-    #average_in_minutes_list = [10]  # frequency in minutes
     print(f"average_in_minutes_list: {average_in_minutes_list}")
     print()
 

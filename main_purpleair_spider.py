@@ -325,17 +325,11 @@ if __name__ == "__main__":
     start_time_process = time.process_time()
     start_time_thread = time.thread_time()
 
-    print_json = ApiCall.formatted_print
-
     config = configparser.ConfigParser()
-    config.read('keys/Airly_API_key.conf')
     config.read('keys/PurpleAir_API_key.conf')
 
     # PurpleAir
     purple_air = PurpleAir(config)
-
-    # london_sensors = purple_air_api.sensors(nwlat=51.6000, nwlng=-0.1800, selat=51.4600, selng=-0.0300)
-    # print_json(london_sensors)
 
     print(f"sensors_groups.keys():", sensors_groups.keys())
     sensor_group_names = [
@@ -347,21 +341,6 @@ if __name__ == "__main__":
     average_in_minutes_list = [24 * 60, 6 * 60, 60, 10,]  # frequency in minutes
     print(f"average_in_minutes_list: {average_in_minutes_list}")
     print()
-
-    # data_iterator = fetch_data(
-    #     purple_air_api=purple_air,
-    #     sensor_group_names=sensor_group_names,
-    #     average_in_minutes=average_in_minutes_list,
-    #     concat_dfs=True,
-    #     end_date=None,
-    #     # end_date=pd.to_datetime('2023-04-01', utc=True),  # keep the same date for having fixed calls
-    #     time_span=pd.Timedelta(days=5 * 365),
-    #     datadir='data/',
-    #     workers=100,
-    # )
-    # print(next(data_iterator))
-    # del data_iterator
-    # sys.exit()
 
     data = defaultdict(dict)
     for (group_name, sensor_index, avg), dfs in fetch_data(

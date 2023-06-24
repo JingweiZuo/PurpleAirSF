@@ -199,6 +199,18 @@ def load_array(datadir='data', filename='array.npy'):
     return np.load(filepath)
 
 
+def missing_val_process(arr):
+    # Count the number of inherent 0 values
+    arr_no_nan = np.nan_to_num(arr.astype(float), nan=0.0)
+    nbr_zeros = np.count_nonzero(arr_no_nan == 0)
+    print("Number of zeros is ", nbr_zeros)
+    print("Number of total records is ", arr_no_nan.size)
+    print("Inherent Zero rate is ", nbr_zeros/arr_no_nan.size)
+    print(np.count_nonzero(arr_no_nan == 0) /arr_no_nan.size )
+
+    return arr_no_nan
+
+
 if __name__ == "__main__":
     pd.set_option('display.max_columns', None, 'display.expand_frame_repr', False)
 
@@ -223,8 +235,10 @@ if __name__ == "__main__":
                         save=False)
 
     array_NLF = sensors_to_array_NLF(sensors)
+    array_NLF_no_nan = missing_val_process(array_NLF)
+    
     if SAVE_ARRAYS:
-        save_array(array_NLF,
+        save_array(array_NLF_no_nan,
                    datadir=datadir,
                    filename=array_filename)
 
