@@ -1,6 +1,6 @@
 ## Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset
 
-This is the companion repository for the PurpleAirSF Dataset. Paper will be released soon.
+This is the companion repository for the PurpleAirSF Dataset. The paper can be found [here](https://arxiv.org/pdf/2306.13948.pdf).
 
 The preprocessed datasets can be downloaded in [Google Drive](https://drive.google.com/drive/folders/1K-o1KhbM0fGARt40v2zrOO1jcqqATh-d?usp=sharing).
 
@@ -88,8 +88,11 @@ If you find this data useful in your research, please consider citing the follow
 
 ```script
 @misc{zuo2023unleashing,
-  title     = {Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset },
-  author    = {Zuo, Jingwei and Li, Wenbin and Baldo, Michele and Hacid, Hakim},
-  year      = {2023}
+      title  = {Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset}, 
+      author  ={Jingwei Zuo and Wenbin Li and Michele Baldo and Hakim Hacid},
+      year  ={2023},
+      eprint={2306.13948},
+      archivePrefix ={arXiv},
+      primaryClass = {cs.LG}
 }
 ```
