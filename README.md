@@ -87,12 +87,10 @@ API_readKey = YOUR-PRIVATE-READ-KEY
 If you find this data useful in your research, please consider citing the following paper:
 
 ```script
-@misc{zuo2023unleashing,
+@inproceedings{zuo2023unleashing,
       title  = {Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset}, 
       author  ={Jingwei Zuo and Wenbin Li and Michele Baldo and Hakim Hacid},
       year  ={2023},
-      eprint={2306.13948},
-      archivePrefix ={arXiv},
-      primaryClass = {cs.LG}
+      booktitle = {ACM SIGSPATIAL '23}
 }
 ```
