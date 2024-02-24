@@ -91,6 +91,6 @@ If you find this data useful in your research, please consider citing the follow
       title  = {Unleashing Realistic Air Quality Forecasting: Introducing the Ready-to-Use PurpleAirSF Dataset}, 
       author  ={Jingwei Zuo and Wenbin Li and Michele Baldo and Hakim Hacid},
       year  ={2023},
-      booktitle = {ACM SIGSPATIAL '23}
+      booktitle = {ACM SIGSPATIAL'23}
 }
 ```
